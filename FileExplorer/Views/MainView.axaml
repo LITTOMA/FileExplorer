@@ -1,0 +1,37 @@
+<UserControl
+    x:Class="FileExplorer.Views.MainView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:icons="using:FluentIcons.Avalonia"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:FileExplorer.Views;assembly=FileExplorer"
+    xmlns:vm="clr-namespace:FileExplorer.ViewModels"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+    <Design.DataContext>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        <views:ToolBar Grid.Row="0" />
+        <views:NavigationBar Grid.Row="1" />
+
+        <Grid Grid.Row="2" ColumnDefinitions="*,1,4*">
+            <Border Grid.Column="0" />
+            <GridSplitter
+                Grid.Column="1"
+                Background="#f7f7f7"
+                ResizeDirection="Columns" />
+            <Border Grid.Column="2" />
+        </Grid>
+
+        <views:StatusBar Grid.Row="3" />
+    </Grid>
+</UserControl>
