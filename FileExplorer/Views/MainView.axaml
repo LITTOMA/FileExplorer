@@ -27,6 +27,8 @@
             <Border Grid.Column="0" />
             <GridSplitter
                 Grid.Column="1"
+                MinWidth="1"
+                MinHeight="1"
                 Background="#f7f7f7"
                 ResizeDirection="Columns" />
             <Border Grid.Column="2" />
