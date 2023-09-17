@@ -8,13 +8,13 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <ItemsRepeater Name="test">
+    <ItemsRepeater x:Name="navigatorItems" ItemsSource="{Binding Items}">
         <ItemsRepeater.Layout>
             <StackLayout Orientation="Horizontal" />
         </ItemsRepeater.Layout>
         <ItemsRepeater.ItemTemplate>
             <DataTemplate>
-                <views:FolderNavigatorItem />
+                <views:FolderNavigatorItem Path="{Binding .}" />
             </DataTemplate>
         </ItemsRepeater.ItemTemplate>
     </ItemsRepeater>
